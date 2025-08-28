@@ -7,216 +7,226 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
     min-height: 100vh;
-    color: #333;
+    color: #000;
     padding: 20px;
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
-    color: #2c3e50;
+    margin-bottom: 25px;
 }
 
 header h1 {
-    font-size: 2.8em;
+    font-size: 2.5em;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: #2e7d32;
     font-weight: bold;
 }
 
 .stats {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    font-size: 1.3em;
+    gap: 25px;
+    font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .stats span {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #4caf50;
     color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    min-width: 120px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    min-width: 100px;
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .word-card {
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid #4caf50;
     text-align: center;
     width: 100%;
-    border: 3px solid #e9ecef;
 }
 
 #currentWord {
-    font-size: 3em;
-    margin-bottom: 25px;
-    color: #2c3e50;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #000;
     font-weight: bold;
-    min-height: 100px;
+    min-height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: #e8f5e8;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 12px;
+    border: 2px solid #4caf50;
 }
 
 .word-info {
-    margin: 20px 0;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    border-left: 4px solid #667eea;
+    margin: 15px 0;
+    padding: 12px;
+    background: #f1f8e9;
+    border-radius: 8px;
+    border-left: 4px solid #4caf50;
 }
 
 .word-info div {
-    margin: 8px 0;
-    font-size: 1.1em;
-    color: #495057;
+    margin: 6px 0;
+    font-size: 1em;
+    color: #000;
 }
 
 #category {
     font-weight: bold;
-    color: #e74c3c;
+    color: #2e7d32;
 }
 
 #rule {
     font-weight: bold;
-    color: #27ae60;
+    color: #388e3c;
 }
 
 .stress-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .stress-btn {
-    padding: 20px;
-    font-size: 1.4em;
+    padding: 18px;
+    font-size: 1.3em;
     font-weight: bold;
-    border: 3px solid #ddd;
-    border-radius: 15px;
-    background: #fff;
+    border: 2px solid #c8e6c9;
+    border-radius: 12px;
+    background: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: #2c3e50;
-    min-height: 80px;
+    color: #000;
+    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .stress-btn:hover {
-    background: #e9ecef;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #e8f5e8;
+    transform: translateY(-2px);
+    border-color: #4caf50;
 }
 
 .stress-btn.correct {
-    background: #d4edda;
-    border-color: #28a745;
-    color: #155724;
-    font-weight: bold;
+    background: #c8e6c9;
+    border-color: #4caf50;
+    color: #000;
 }
 
 .stress-btn.incorrect {
-    background: #f8d7da;
-    border-color: #dc3545;
-    color: #721c24;
-    font-weight: bold;
+    background: #ffebee;
+    border-color: #f44336;
+    color: #000;
 }
 
 .controls {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 button {
-    padding: 18px 35px;
-    font-size: 1.3em;
+    padding: 15px 25px;
+    font-size: 1.1em;
     font-weight: bold;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     color: white;
-    min-width: 200px;
+    min-width: 180px;
+    background: #4caf50;
 }
 
 button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    background: #388e3c;
 }
 
 button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
+    background: #81c784;
 }
 
 #startBtn {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    background: #2e7d32;
+}
+
+#startBtn:hover {
+    background: #1b5e20;
 }
 
 #nextBtn {
-    background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
-    color: #212529;
+    background: #4caf50;
+}
+
+#nextBtn:hover {
+    background: #388e3c;
 }
 
 #toggleRulesBtn {
-    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    background: #689f38;
+}
+
+#toggleRulesBtn:hover {
+    background: #558b2f;
 }
 
 .result {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     text-align: center;
-    min-height: 50px;
-    padding: 15px;
-    border-radius: 10px;
+    min-height: 45px;
+    padding: 12px;
+    border-radius: 8px;
     width: 100%;
+    color: #000;
 }
 
 .rules-info {
-    background: #f8f9fa;
-    padding: 25px;
-    border-radius: 15px;
-    margin-top: 25px;
-    border: 2px solid #dee2e6;
+    background: #f1f8e9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 2px solid #c8e6c9;
     width: 100%;
 }
 
 .rules-info h3 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-size: 1.4em;
+    color: #2e7d32;
+    margin-bottom: 12px;
+    font-size: 1.2em;
     text-align: center;
 }
 
@@ -226,35 +236,35 @@ button:disabled {
 }
 
 .rules-info li {
-    margin: 12px 0;
-    line-height: 1.6;
-    color: #495057;
-    font-size: 1.1em;
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #000;
+    font-size: 1em;
 }
 
 footer {
     text-align: center;
-    margin-top: 30px;
-    color: #6c757d;
-    font-size: 1.1em;
-    padding: 20px;
-    border-top: 2px solid #e9ecef;
+    margin-top: 25px;
+    color: #689f38;
+    font-size: 1em;
+    padding: 15px;
+    border-top: 2px solid #c8e6c9;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
+        padding: 15px;
         margin: 10px;
     }
     
     header h1 {
-        font-size: 2.2em;
+        font-size: 2em;
     }
     
     .stats {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
     
     .stats span {
@@ -262,12 +272,12 @@ footer {
     }
     
     .word-card {
-        padding: 25px;
+        padding: 20px;
     }
     
     #currentWord {
-        font-size: 2.2em;
-        min-height: 80px;
+        font-size: 2em;
+        min-height: 70px;
         padding: 15px;
     }
     
@@ -276,8 +286,8 @@ footer {
     }
     
     .stress-btn {
-        font-size: 1.2em;
-        min-height: 70px;
+        font-size: 1.1em;
+        min-height: 60px;
         padding: 15px;
     }
     
@@ -288,26 +298,22 @@ footer {
     button {
         width: 100%;
         min-width: auto;
-        font-size: 1.2em;
-        padding: 15px;
-    }
-    
-    .word-info div {
         font-size: 1em;
+        padding: 12px;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.8em;
+        font-size: 1.7em;
     }
     
     #currentWord {
-        font-size: 1.8em;
+        font-size: 1.7em;
     }
     
     .stress-btn {
-        font-size: 1.1em;
+        font-size: 1em;
     }
     
     .rules-info {
@@ -315,6 +321,10 @@ footer {
     }
     
     .rules-info li {
-        font-size: 1em;
+        font-size: 0.9em;
+    }
+    
+    .word-info div {
+        font-size: 0.9em;
     }
 }
