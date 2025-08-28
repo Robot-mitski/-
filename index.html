@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажер ударений для ЕГЭ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Тренажер ударений для ЕГЭ</h1>
+            <div class="stats">
+                <span>Правильно: <span id="correct">0</span></span>
+                <span>Неправильно: <span id="incorrect">0</span></span>
+            </div>
+        </header>
+
+        <main>
+            <div class="word-card" id="wordCard">
+                <h2 id="currentWord">Нажмите "Начать" для начала тренировки</h2>
+                <div class="stress-options" id="stressOptions"></div>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" onclick="startTraining()">Начать</button>
+                <button id="nextBtn" onclick="nextWord()" disabled>Следующее слово</button>
+            </div>
+
+            <div class="result" id="result"></div>
+        </main>
+
+        <footer>
+            <p>Для подготовки к ЕГЭ по русскому языку</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
