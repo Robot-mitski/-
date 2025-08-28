@@ -19,15 +19,33 @@
         <main>
             <div class="word-card" id="wordCard">
                 <h2 id="currentWord">Нажмите "Начать" для начала тренировки</h2>
+                
+                <div class="word-info">
+                    <div>Категория: <span id="category"></span></div>
+                    <div>Правило: <span id="rule"></span></div>
+                </div>
+                
                 <div class="stress-options" id="stressOptions"></div>
             </div>
 
             <div class="controls">
                 <button id="startBtn" onclick="startTraining()">Начать</button>
                 <button id="nextBtn" onclick="nextWord()" disabled>Следующее слово</button>
+                <button id="toggleRulesBtn" onclick="toggleRules()">Скрыть правила</button>
             </div>
 
             <div class="result" id="result"></div>
+
+            <div class="rules-info" id="ruleInfo">
+                <h3>Правила ударений:</h3>
+                <ul>
+                    <li>Глаголы женского рода и краткие причастия женского рода - на последнюю А (бралА, занятА)</li>
+                    <li>Исключения: крАлась, клАла, послАла</li>
+                    <li>Причастия мужского рода: если НН/ВШ/Щ - на гласную перед ними</li>
+                    <li>Причастия с суффиксом Т - на первый слог</li>
+                    <li>Деепричастия - как в инфинитиве</li>
+                </ul>
+            </div>
         </main>
 
         <footer>
