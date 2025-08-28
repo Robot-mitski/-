@@ -77,7 +77,7 @@ class StressTrainer {
             {word: "повторит", correct: "повторИт", category: "глаголы", rule: "Остальные глаголы"},
             {word: "принять", correct: "принЯть", category: "глаголы", rule: "принЯть: прИнял, принялА, прИняли"},
             {word: "сверлит", correct: "сверлИт", category: "глаголы", rule: "Остальные глаголы"}
-        ];
+        ;
         
         this.currentWordIndex = 0;
         this.correctAnswers = 0;
@@ -100,6 +100,7 @@ class StressTrainer {
         this.ruleElement = document.getElementById('rule');
         this.categoryElement = document.getElementById('category');
         this.toggleRulesBtn = document.getElementById('toggleRulesBtn');
+        this.ruleInfoElement = document.getElementById('ruleInfo');
     }
     
     setupEventListeners() {
@@ -115,9 +116,8 @@ class StressTrainer {
     }
     
     updateRuleDisplay() {
-        const ruleInfo = document.getElementById('ruleInfo');
-        if (ruleInfo) {
-            ruleInfo.style.display = this.showRules ? 'block' : 'none';
+        if (this.ruleInfoElement) {
+            this.ruleInfoElement.style.display = this.showRules ? 'block' : 'none';
         }
     }
     
@@ -132,90 +132,9 @@ class StressTrainer {
         this.startBtn.disabled = true;
         this.nextBtn.disabled = false;
         this.resultElement.textContent = '';
+        this.resultElement.style.background = 'transparent';
         
         this.showWord();
-    }
-    
-    shuffleWords() {
-        for (let i = this.words.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [this.words[i], this.words[j]] = [this.words[j], this.words[i]];
-        }
-    }
-    
-    showWord() {
-        if (this.currentWordIndex >= this.words.length) {
-            this.finishTraining();
-            return;
-        }
-        
-        const currentWord = this.words[this.currentWordIndex];
-        this.currentWordElement.textContent = currentWord.word;
-        
-        // Показываем категорию и правило
-        if (this.categoryElement) {
-            this.categoryElement.textContent = currentWord.category || '';
-        }
-        if (this.ruleElement) {
-            this.ruleElement.textContent = currentWord.rule || '';
-        }
-        this.updateRuleDisplay();
-        
-        this.generateOptions(currentWord);
-    }
-    
-    generateOptions(currentWord) {
-        this.stressOptionsElement.innerHTML = '';
-        
-        // Создаем варианты с ударениями
-        const options = this.generateStressVariants(currentWord.word);
-        
-        // Добавляем правильный вариант, если его нет среди сгенерированных
-        if (!options.includes(currentWord.correct)) {
-            options[Math.floor(Math.random() * options.length)] = currentWord.correct;
-        }
-        
-        // Перемешиваем варианты
-        this.shuffleArray(options);
-        
-        options.forEach(option => {
-            const button = document.createElement('button');
-            button.className = 'stress-btn';
-            button.textContent = option;
-            button.onclick = () => this.checkAnswer(option, currentWord.correct);
-            this.stressOptionsElement.appendChild(button);
-        });
-    }
-    
-    generateStressVariants(word) {
-        const vowels = 'аеёиоуыэюя';
-        const variants = [];
-        
-        // Находим все гласные в слове
-        const vowelPositions = [];
-        for (let i = 0; i < word.length; i++) {
-            if (vowels.includes(word[i].toLowerCase())) {
-                vowelPositions.push(i);
-            }
-        }
-        
-        // Создаем варианты с ударением на разных гласных
-        for (let i = 0; i < Math.min(4, vowelPositions.length); i++) {
-            const pos = vowelPositions[i];
-            let variant = '';
-            
-            for (let j = 0; j < word.length; j++) {
-                if (j === pos) {
-                    variant += word[j].toUpperCase();
-                } else {
-                    variant += word[j];
-                }
-            }
-            
-            variants.push(variant);
-        }
-        
-        return variants;
     }
     
     checkAnswer(selected, correct) {
@@ -232,12 +151,14 @@ class StressTrainer {
         
         if (selected === correct) {
             this.correctAnswers++;
-            this.resultElement.textContent = 'Правильно! 👍';
-            this.resultElement.style.color = '#d4edda';
+            this.resultElement.textContent = '✅ Правильно!';
+            this.resultElement.style.background = '#c8e6c9';
+            this.resultElement.style.color = '#000';
         } else {
             this.incorrectAnswers++;
-            this.resultElement.textContent = `Неправильно! Правильно: ${correct}`;
-            this.resultElement.style.color = '#f8d7da';
+            this.resultElement.textContent = `❌ Неправильно! Правильно: ${correct}`;
+            this.resultElement.style.background = '#ffebee';
+            this.resultElement.style.color = '#000';
         }
         
         this.updateStats();
